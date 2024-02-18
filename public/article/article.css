@@ -1,24 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
 body {
     background-color: #222;
     color: #fff;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    overflow: hidden;
+    height: 100vh;
 }
 .navbar {
     display: flex;
     align-items: center;
     padding: 5px;
     background-color: #111;
-    position: fixed;
-    top: 0;
-    z-index: 1000;
     width: 100%;
+    height: 15%;
 }
 
 #logout{
     cursor: pointer;
-   margin-right: 50px;
+    margin-right: 50px;
 }
 .logo {
     width: 100px;
@@ -34,19 +36,95 @@ body {
     margin-right: 20px;
     float: right;
 }
-.container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    margin-top: 10em;
-    background-color: #333;
-    border-radius: 10px;
+
+main {
+    display: flex;
+    height: 85%;
 }
+.container {
+    display: flex;
+    width: 50%;
+    height: 85%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container2 {
+    display: flex;
+    width: 50%;
+    height: 85%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.desc {
+    width: 80%;
+    height: 60%;
+    font-size: 1.5em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.tracklist {
+    width: 80%;
+    height: 40%;
+}
+
+.custom-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Pour que les éléments passent à la ligne si l'espace est insuffisant */
+}
+
+.custom-list li {
+    width: calc(33.33% - 20px); /* Pour calculer la largeur de chaque élément avec une marge de 20px */
+    margin: 10px; /* Marge autour de chaque élément */
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.custom-list li::after {
+    content: ""; /* Pour ajouter le séparateur entre les éléments */
+    margin-left: 5px; /* Marge à gauche du séparateur */
+    margin-right: 5px; /* Marge à droite du séparateur */
+}
+
+.custom-list li:last-child::after {
+    content: none; /* Pour supprimer le séparateur après le dernier élément */
+}
+
+
+
+
+
+
+
+.img__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+
+    img {
+        width: 65%;
+        height: auto;
+    }
+}
+
 h2 {
     margin-top: 0;
 }
 p {
     margin: 5px 0;
+}
+
+.innerWrapper {
+    display: flex;
+    align-items: center;
+    width: 29%;
 }
 
 .coverWrapper {
@@ -55,16 +133,16 @@ p {
 }
 
 .cover {
-    width: 220px;
-    height: 220px;
+    width: 300px;
+    height: 300px;
     margin: auto -70px auto auto;
     background-size: contain;
     box-shadow: 5px 10px 25px rgba(29,29,29,.5058823529411764);
 
     img {
-        width: 320px;
-        height: 320px;
-       
+        width: 300px;
+        height: 300px;
+
     }
 }
 
@@ -77,16 +155,17 @@ p {
 
 .outer {
     float: left;
-    width: 220px;
-    height: 220px;
+    width: 300px;
+    height: 300px;
     background-color: #080808;
     box-shadow: 5px 10px 25px rgba(29,29,29,.5058823529411764);
 }
 
 .inner {
     align-items: center;
-    width: 100px;
-    height: 100px;
+    justify-content: center;
+    width: 300px;
+    height: 300px;
     background-size: contain;
     animation-name: spin;
     animation-duration: 7s;
@@ -104,7 +183,7 @@ p {
     0% {
         transform: rotate(0deg);
     }
-    
+
     100% {
         transform: rotate(1turn);
     }

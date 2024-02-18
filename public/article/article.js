@@ -31,4 +31,116 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const cover = document.getElementsByClassName('coverimg');
     cover[0].src = `${coverName}.jpg`;
     cover[1].src = `${coverName}.jpg`;
+
+    const salutcestLOIC = document.getElementsByClassName('custom-list');
+
+    const desc = document.getElementsByClassName('album__desc');
+    switch (coverName) {
+        case 'utopia':
+            desc[0].innerHTML = `"Utopia" est bien plus qu'un simple album pour Travis Scott ; c'est un voyage à travers les rêves et les aspirations d'un artiste à la recherche de l'ultime expression de son art. Chaque piste est un paysage sonore distinct, fusionnant des rythmes captivants avec des paroles évocatrices pour transporter l'auditeur dans un univers fantastique. Avec des collaborations de premier plan et une production innovante, cet album repousse les frontières du genre et établit Travis Scott comme un pionnier de la musique contemporaine. "Utopia" invite chacun à explorer son propre monde intérieur et à trouver la beauté dans l'imagination sans limites. C'est une œuvre d'art audacieuse qui célèbre la créativité sous toutes ses formes.`;
+            salutcestLOIC[0].innerHTML = `
+                <li>HYAENA</li>
+                <li>THANK GOD</li>
+                <li>MODERN JAM</li>
+                <li>MY EYES</li>
+                <li>GOD'S COUNTRY</li>
+                <li>SIRENS</li>
+                <li>MELTDOWN</li>
+                <li>FE!N</li>
+                <li>DELRESTO (echoes)</li>
+                <li>I KNOW?</li>
+                <li>TOPIA TWINS</li>
+                <li>CIRCUS MAXIMUS</li>
+                <li>PARASAIL</li>
+                <li>SKITZO</li>
+                <li>LOST FOREVER</li>
+                <li>LOOOVE</li>
+                <li>K-POP</li>
+                <li>TELEKINESIS</li>
+                <li>TIL FURTHER NOTICE</li>
+            `
+            break;
+
+        case 'astroworld':
+            desc[0].innerHTML = `L'album "Astroworld" de Travis Scott est bien plus qu'une simple collection de chansons; c'est une odyssée artistique qui transporte l'auditeur dans un univers fantasmagorique. À travers des rythmes captivants et des paroles évocatrices, Scott peint un paysage sonore unique, mêlant le hip-hop, le trap et des éléments expérimentaux. Avec une conception visuelle époustouflante, l'album fusionne l'art, la musique et la narration pour créer une expérience immersive. Chaque piste est soigneusement orchestrée pour capturer l'esprit de l'imaginaire, invitant les auditeurs à plonger dans les méandres de l'univers d'Astroworld avec lui.`;
+            salutcestLOIC[0].innerHTML = `
+                <li>STARGAZING</li>
+                <li>CAROUSEL</li>
+                <li>SICKO MODE</li>
+                <li>R.I.P. SCREW</li>
+                <li>STOP TRYING TO BE GOD</li>
+                <li>NO BYSTANDERS</li>
+                <li>SKELETONS</li>
+                <li>WAKE UP</li>
+                <li>5% TINT</li>
+                <li>NC-17</li>
+                <li>ASTROTHUNDER</li>
+                <li>YOSEMITE</li>
+                <li>CAN'T SAY</li>
+                <li>WHO?WHAT?</li>
+                <li>BUTTERFLY EFFECT</li>
+                <li>HOUSTONFORNICATION</li>
+                <li>COFFEE BEAN</li>
+            `
+            break;
+
+        case 'jackboys':
+            desc[0].innerHTML = `L'album "Jackboys" de Travis Scott ne se contente pas d'être une simple compilation de chansons ; il représente une immersion totale dans son univers sonore et visuel singulier. Sa conception résulte d'une collaboration intense, rassemblant divers talents pour créer une expérience immersive. Des rythmes hypnotiques aux visuels saisissants, chaque détail est soigneusement pensé pour transporter l'auditeur dans un voyage captivant. En fusionnant diverses influences, Travis Scott repousse les frontières du rap et de la culture urbaine, offrant ainsi un album qui laisse une marque indélébile et redéfinit les normes de l'industrie musicale.`
+            salutcestLOIC[0].innerHTML = `
+                <li>HIGHEST IN THE ROOM</li>
+                <li>JACKBOYS</li>
+                <li>GANG GANG</li>
+                <li>HAD ENOUGH</li>
+                <li>OUT WEST</li>
+                <li>WHAT TO DO?</li>
+                <li>GATTI</li>
+            `
+            break;
+            
+        case 'birds':
+            desc[0].innerHTML = `L'album "Birds in the Trap Sing McKnight" de Travis Scott transcende les simples compilations de chansons pour offrir une immersion totale dans son univers musical distinctif. Fruit d'une collaboration intense, il réunit des talents divers pour créer une expérience auditive et visuelle captivante. Des mélodies envoûtantes aux paroles poignantes, chaque aspect est minutieusement conçu pour transporter l'auditeur dans un voyage émotionnel saisissant. En fusionnant des influences variées, Travis Scott repousse les limites du genre rap et crée un album qui redéfinit les normes de l'industrie musicale tout en laissant une empreinte durable dans l'esprit de ses auditeurs.`;
+            salutcestLOIC[0].innerHTML = `
+                <li>the ends</li>
+                <li>way back</li>
+                <li>coordinate</li>
+                <li>through the late night</li>
+                <li>beibs in the trap</li>
+                <li>sdp interlude</li>
+                <li>sweet sweet</li>
+                <li>outside</li>
+                <li>goosebumps</li>
+                <li>first take</li>
+                <li>pick up the phone</li>
+                <li>lose</li>
+                <li>guidance</li>
+                <li>wonderful</li>
+            `
+            break;
+
+        case 'rodeo':
+            desc[0].innerHTML = `L'album "Rodeo" de Travis Scott va bien au-delà d'une simple compilation de chansons ; il offre une immersion totale dans son univers sonore distinctif. Conçu à travers une collaboration intense, il réunit des talents divers pour créer une expérience sensorielle captivante. Des beats puissants aux paroles évocatrices, chaque élément est soigneusement élaboré pour transporter l'auditeur dans un voyage émotionnel et visuel envoûtant. En fusionnant des influences diverses, Travis Scott repousse les frontières du rap et de la culture urbaine, offrant ainsi un album qui marque son époque et redéfinit les normes de l'industrie musicale.`;
+            salutcestLOIC[0].innerHTML = `
+                <li>Pornography</li>
+                <li>Oh My Dis Side</li>
+                <li>3500</li>
+                <li>WASTED</li>
+                <li>90210</li>
+                <li>Pray 4 Love</li>
+                <li>Nightcrawler</li>
+                <li>Piss On Your Grave</li>
+                <li>Antidote</li>
+                <li>Impossible</li>
+                <li>Maria I'm Drunk</li>
+                <li>Flying High</li>
+                <li>I Can Tell</li>
+                <li>Apple Pie</li>
+                <li>Ok Alright</li>
+                <li>Never Catch Me</li>
+            `
+            break;
+
+
+        default:
+            break;
+    }
 });
