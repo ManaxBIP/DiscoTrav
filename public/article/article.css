@@ -1,0 +1,120 @@
+body {
+    background-color: #222;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    background-color: #111;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+#logout{
+    cursor: pointer;
+   margin-right: 50px;
+}
+.logo {
+    width: 100px;
+    margin-right: auto;
+    float: left;
+}
+.title {
+    flex: 1;
+    margin: 0;
+}
+.user-info {
+    margin-left: auto;
+    margin-right: 20px;
+    float: right;
+}
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    margin-top: 10em;
+    background-color: #333;
+    border-radius: 10px;
+}
+h2 {
+    margin-top: 0;
+}
+p {
+    margin: 5px 0;
+}
+
+.coverWrapper {
+    z-index: 10;
+    display: block;
+}
+
+.cover {
+    width: 220px;
+    height: 220px;
+    margin: auto -70px auto auto;
+    background-size: contain;
+    box-shadow: 5px 10px 25px rgba(29,29,29,.5058823529411764);
+
+    img {
+        width: 320px;
+        height: 320px;
+       
+    }
+}
+
+.inner, .outer {
+    display: flex;
+    margin: auto;
+    border-radius: 50%;
+
+}
+
+.outer {
+    float: left;
+    width: 220px;
+    height: 220px;
+    background-color: #080808;
+    box-shadow: 5px 10px 25px rgba(29,29,29,.5058823529411764);
+}
+
+.inner {
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    animation-name: spin;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+.vynVinyleBox {
+    width: 80%;
+    height: 15%;
+}
+
+.logo, .title {
+    cursor: pointer;
+}
