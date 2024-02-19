@@ -13,7 +13,7 @@
         <img class="logo" src="logo.png" alt="Logo">
         <h1 class="title">DiscoTrav</h1>
         <p class="user-info">Hey, </p>
-        <i id="logout" class="fa-solid fa-right-from-bracket fa-lg" style="color: #ff0000;"></i>
+        <i id="logout" tabindex="0" onkeydown="handleKeyPress(event, 'disconnect')" class="fa-solid fa-right-from-bracket fa-lg" style="color: #ff0000;"></i>
     </nav>
     <div class="container">
         <article id="utopia" tabindex="0" onclick="goToArticle('utopia')" onkeydown="handleKeyPress(event, 'utopia')">
@@ -72,9 +72,34 @@
             window.location.href = `/article-${articleId}`;
         }
 
+        function disconnect() {
+            window.location.href = "/";
+        }
+
         function handleKeyPress(event, articleId) {
             if (event.key === "Enter") {
-                goToArticle(articleId);
+                switch (articleId) {
+                    case "utopia":
+                        goToArticle("utopia");
+                        break;
+                    case "jackboys":
+                        goToArticle("jackboys");
+                        break;
+                    case "astroworld":
+                        goToArticle("astroworld");
+                        break;
+                    case "birds":
+                        goToArticle("birds");
+                        break;
+                    case "rodeo":
+                        goToArticle("rodeo");
+                        break;
+                    case "disconnect":
+                        disconnect();
+                        break;
+                    default:
+                        break;
+                }
             }
         }
     </script>

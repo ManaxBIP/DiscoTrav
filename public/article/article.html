@@ -10,10 +10,10 @@
 </head>
 <body>
     <nav class="navbar">
-        <img class="logo" src="logo.png" alt="Logo">
-        <h1 class="title">DiscoTrav</h1>
+        <img tabindex="0" onkeydown="handleKeyPress(event, 'home')" class="logo" src="logo.png" alt="Logo">
+        <h1 tabindex="0" onkeydown="handleKeyPress(event, 'home')" class="title">DiscoTrav</h1>
         <p class="user-info">Hey, </p>
-        <i id="logout" class="fa-solid fa-right-from-bracket fa-lg" style="color: #ff0000;"></i>
+        <i id="logout" tabindex="0" onkeydown="handleKeyPress(event, 'disconnect')" class="fa-solid fa-right-from-bracket fa-lg" style="color: #ff0000;"></i>
     </nav>
     <main>
         <div class="container">
@@ -50,5 +50,30 @@
             </div>
         </div>
     </main>
+    <script>
+        function returnToHome() {
+            window.location.href = "/home";
+        }
+
+        function disconnect() {
+            window.location.href = "/";
+        }
+
+        function handleKeyPress(event, articleId) {
+            if (event.key === "Enter") {
+                switch (articleId) {
+                    case "home":
+                        returnToHome();
+                        break;
+                    case "disconnect":
+                        disconnect();
+                        break;
+                    default:
+                        returnToHome();
+                }
+            }
+        }
+        
+    </script>
 </body>
 </html>
