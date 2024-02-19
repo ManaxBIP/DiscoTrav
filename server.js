@@ -18,6 +18,9 @@ app.use(express.static(path.join(__dirname, 'public/home')));
 app.use(express.static(path.join(__dirname, 'public/login')));
 app.use(express.static(path.join(__dirname, 'public/article')));
 app.use(express.static(path.join(__dirname, 'public/src')));
+app.use(express.static(path.join(__dirname, 'public/src/cover')));
+app.use(express.static(path.join(__dirname, 'public/src/cover-font')));
+
 
 app.use(express.json());
 app.use(cookieParser());
