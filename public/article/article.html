@@ -10,10 +10,12 @@
 </head>
 <body>
     <nav class="navbar">
-        <img tabindex="0" onkeydown="handleKeyPress(event, 'home')" class="logo" src="logo.png" alt="Logo">
-        <h1 tabindex="0" onkeydown="handleKeyPress(event, 'home')" class="title">DiscoTrav</h1>
-        <p class="user-info">Hey, </p>
-        <i id="logout" tabindex="0" onkeydown="handleKeyPress(event, 'disconnect')" class="fa-solid fa-right-from-bracket fa-lg" style="color: #ff0000;"></i>
+        <img class="logo" src="logo.png" alt="Logo">
+        <h1 class="title">DiscoTrav</h1>
+        <p class="user-info" aria-label="Connecté en tant que utilisateur">Hey, <span id="username"></span></p>
+        <button id="logout" class="logoutBTN" aria-label="Déconnexion" onclick="disconnect()" tabindex="0">
+            <i class="fa-solid fa-right-from-bracket fa-lg" style="color: #ff0000;"></i>
+        </button>
     </nav>
     <main>
         <div class="container">
