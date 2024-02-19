@@ -171,7 +171,24 @@ window.addEventListener('DOMContentLoaded', (event) => {
             const commentsDiv = document.querySelector('.Comments');
             comments.forEach(comment => {
                 const commentElement = document.createElement('div');
-                commentElement.textContent = `${comment.Username}: ${comment.Content} - ${comment.created_at}`;
+                commentElement.classList.add('commentUser');
+                const pdp = document.createElement('div');
+                pdp.classList.add('pdp');
+                profilepics = document.createElement('img');
+                profilepics.src = 'profile.jpg';
+                pdp.appendChild(profilepics);
+                const content = document.createElement('div');
+                content.classList.add('content');
+                const nameDate = document.createElement('div');
+                nameDate.classList.add('nameDate');
+                const message = document.createElement('div');
+                message.classList.add('message');
+                nameDate.textContent = `${comment.Username} - ${comment.created_at}`;
+                message.textContent = comment.Content;
+                content.appendChild(nameDate);
+                content.appendChild(message);
+                commentElement.appendChild(pdp);
+                commentElement.appendChild(content);
                 commentsDiv.appendChild(commentElement);
             });
         } catch (error) {
@@ -183,8 +200,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     getComments();
 
     // Gérez l'ajout de nouveaux commentaires
-    const submitButton = document.createElement('button');
-    submitButton.textContent = 'Submit';
+    const submitButton = document.getElementById('send');
     submitButton.addEventListener('click', async () => {
         let articleId = 0;
         switch (coverName) {
@@ -207,7 +223,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 break;
         }
 
-        const content = prompt('Write a comment:');
+        const content = document.getElementById('input_comment').value;
         if (content) {
             try {
                 await fetch('/comments', {
@@ -227,8 +243,4 @@ window.addEventListener('DOMContentLoaded', (event) => {
             }
         }
     });
-
-    // Ajoutez le bouton de soumission à votre div de commentaires
-    document.querySelector('.Comments').appendChild(submitButton);
-
 });
