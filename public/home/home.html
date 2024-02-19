@@ -16,7 +16,7 @@
         <i id="logout" class="fa-solid fa-right-from-bracket fa-lg" style="color: #ff0000;"></i>
     </nav>
     <div class="container">
-        <article id="utopia">
+        <article id="utopia" tabindex="0" onclick="goToArticle('utopia')" onkeydown="handleKeyPress(event, 'utopia')">
             <img src="utopia.jpg" alt="Cover de l'album utopia">
             <div class="details">
                 <h2>UTOPIA</h2>
@@ -25,7 +25,7 @@
                 <p>Durée: 01H 13MIN</p>
             </div>
         </article>
-        <article id="jackboys">
+        <article id="jackboys" tabindex="0" onclick="goToArticle('jackboys')" onkeydown="handleKeyPress(event, 'jackboys')">
             <img src="jackboys.jpg" alt="Cover de l'album jackboys">
             <div class="details">
                 <h2>JACKBOYS</h2>
@@ -34,7 +34,7 @@
                 <p>Durée: 21MIN 22SEC</p>
             </div>
         </article>
-        <article id="astroworld">
+        <article id="astroworld" tabindex="0" onclick="goToArticle('astroworld')" onkeydown="handleKeyPress(event, 'astroworld')">
             <img src="astroworld.jpg" alt="Cover de l'album astroworld">
             <div class="details">
                 <h2>ASTROWORLD</h2>
@@ -43,7 +43,7 @@
                 <p>Durée: 58MIN 42SEC</p>
             </div>
         </article>
-        <article id="birds">
+        <article id="birds" tabindex="0" onclick="goToArticle('birds')" onkeydown="handleKeyPress(event, 'birds')">
             <img src="birds.jpg" alt="Cover de l'album birds in the trap sing mcknight">
             <div class="details">
                 <h2>BIRDS IN THE TRAP SING MCKNIGHT</h2>
@@ -52,7 +52,7 @@
                 <p>Durée: 53MIN 45SEC</p>
             </div>
         </article>
-        <article id="rodeo">
+        <article id="rodeo" tabindex="0" onclick="goToArticle('rodeo')" onkeydown="handleKeyPress(event, 'rodeo')">
             <img src="rodeo.jpg" alt="Cover de l'album rodeo">
             <div class="details">
                 <h2>RODEO</h2>
@@ -62,5 +62,21 @@
             </div>
         </article>
     </div>
+
+    <script>
+        function goToArticle(articleId) {
+            // Replace this with the actual logic to navigate to the article's page
+            console.log("Navigating to article:", articleId);
+
+            // Example: redirect to the article's page
+            window.location.href = `/article-${articleId}`;
+        }
+
+        function handleKeyPress(event, articleId) {
+            if (event.key === "Enter") {
+                goToArticle(articleId);
+            }
+        }
+    </script>
 </body>
 </html>
