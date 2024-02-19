@@ -39,23 +39,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
         window.location.href = '/';
     });
 
-    const favoris = document.querySelectorAll('.container i[data]');
-    favoris.forEach(favori => {
-        favori.addEventListener('click', function(event) {
-            // Récupérer l'élément <i> cliqué
-            const favoriClique = event.target;
-    
-            // Récupérer la valeur de l'attribut data
-            const dataValue = favoriClique.getAttribute('data');
-
-            if (favoriClique.className === "fa-regular fa-star fa-xl") {
-                favoriClique.className = "fa-solid fa-star fa-xl";
-            } else {
-                favoriClique.className = "fa-regular fa-star fa-xl";
-            }
-        });
-    });
-
     // Sélectionnez tous les éléments <article>
     const articles = document.querySelectorAll('.container article');
 

@@ -6,21 +6,24 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    /* overflow: hidden; */
     height: 100vh;
 }
+
 .navbar {
     display: flex;
     align-items: center;
     padding: 5px;
     background-color: #111;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
     width: 100%;
-    height: 15%;
 }
 
 #logout{
     cursor: pointer;
-    margin-right: 50px;
+   margin-right: 50px;
 }
 .logo {
     width: 100px;
@@ -31,6 +34,11 @@ body {
     flex: 1;
     margin: 0;
 }
+
+.logo, .title {
+    cursor: pointer;
+}
+
 .user-info {
     margin-left: auto;
     margin-right: 20px;
@@ -42,6 +50,7 @@ main {
     height: 85%;
 }
 .container {
+    margin-top: 10em;
     display: flex;
     width: 50%;
     height: 85%;
@@ -52,8 +61,12 @@ main {
 
 .container2 {
     display: flex;
+    margin-top: 10em;
+    padding-top: 10em;
     width: 50%;
     height: 85%;
+    font-size: 0.9em;
+    gap: 8em;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -67,6 +80,8 @@ main {
 }
 
 .tracklist {
+    text-align: center;
+    font-size: large;
     width: 80%;
     height: 40%;
 }
@@ -82,7 +97,7 @@ main {
     width: calc(33.33% - 20px); /* Pour calculer la largeur de chaque élément avec une marge de 20px */
     margin: 10px; /* Marge autour de chaque élément */
     box-sizing: border-box;
-    text-align: center;
+    text-align: start;
 }
 
 .custom-list li::after {
@@ -196,4 +211,14 @@ p {
 
 .logo, .title {
     cursor: pointer;
+}
+
+.CommentsBox {
+    margin-top: 7em;
+    width: 80%;
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
