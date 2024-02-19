@@ -155,4 +155,74 @@ window.addEventListener('DOMContentLoaded', (event) => {
         default:
             break;
     }
+
+    async function getComments() {
+        try {
+            const response = await fetch('/comments');
+            const comments = await response.json();
+
+            // Bouclez sur chaque commentaire et affichez-le dans la div de commentaires
+            const commentsDiv = document.querySelector('.Comments');
+            comments.forEach(comment => {
+                const commentElement = document.createElement('div');
+                commentElement.textContent = `${comment.Username}: ${comment.Content} - ${comment.created_at}`;
+                commentsDiv.appendChild(commentElement);
+            });
+        } catch (error) {
+            console.error('Erreur lors de la récupération des commentaires:', error);
+        }
+    }
+
+    // Appelez la fonction pour récupérer les commentaires au chargement de la page
+    getComments();
+
+    // Gérez l'ajout de nouveaux commentaires
+    const submitButton = document.createElement('button');
+    submitButton.textContent = 'Submit';
+    submitButton.addEventListener('click', async () => {
+        let articleId = 0;
+        switch (coverName) {
+            case 'utopia':
+                articleId = 1;
+                break;
+            case 'astroworld':
+                articleId = 2;
+                break;
+            case 'jackboys':
+                articleId = 3;
+                break;
+            case 'birds':
+                articleId = 4;
+                break;
+            case 'rodeo':
+                articleId = 5;
+                break;
+            default:
+                break;
+        }
+
+        const content = prompt('Write a comment:');
+        if (content) {
+            try {
+                await fetch('/comments', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ IdArticle: articleId, Username: username, Content: content })
+                });
+
+                // Rafraîchissez les commentaires pour afficher le nouveau commentaire ajouté
+                const commentsDiv = document.querySelector('.Comments');
+                commentsDiv.innerHTML = '';
+                getComments();
+            } catch (error) {
+                console.error('Erreur lors de l\'ajout du commentaire:', error);
+            }
+        }
+    });
+
+    // Ajoutez le bouton de soumission à votre div de commentaires
+    document.querySelector('.Comments').appendChild(submitButton);
+
 });

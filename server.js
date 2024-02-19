@@ -95,6 +95,45 @@ app.post('/home', async (req, res) => {
     }
 });
 
+// Route pour récupérer les commentaires depuis Supabase
+app.get('/comments', async (req, res) => {
+    try {
+        const { data, error } = await supabase
+            .from('comments')
+            .select('*');
+        
+        if (error) {
+            throw error;
+        }
+
+        res.json(data);
+    } catch (error) {
+        console.error('Erreur lors de la récupération des commentaires:', error.message);
+        res.status(500).json({ error: 'Erreur lors de la récupération des commentaires' });
+    }
+});
+
+// Route pour ajouter un nouveau commentaire à Supabase
+app.post('/comments', async (req, res) => {
+    try {
+        const { IdArticle, Username, Content } = req.body;
+
+        const { data, error } = await supabase
+            .from('comments')
+            .insert([{ IdArticle, Username, Content, created_at: new Date().toISOString() }]);
+
+        if (error) {
+            throw error;
+        }
+
+        res.json({ success: true, message: 'Commentaire ajouté avec succès' });
+    } catch (error) {
+        console.error('Erreur lors de l\'ajout du commentaire:', error.message);
+        res.status(500).json({ error: 'Erreur lors de l\'ajout du commentaire' });
+    }
+});
+
+
 async function authenticateUser(username, password) {
     try {
         // Recherchez l'utilisateur dans la base de données Supabase
