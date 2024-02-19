@@ -25,6 +25,14 @@ body {
     cursor: pointer;
    margin-right: 50px;
 }
+
+.logoutBTN{
+    cursor: pointer;
+    margin-right: 50px;
+    background: none;
+    border: none;
+}
+
 .logo {
     width: 100px;
     margin-right: auto;

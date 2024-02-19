@@ -5,18 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DiscoTrav - Home</title>
     <link rel="stylesheet" href="home.css">
-    <script src="home.js"></script>
+    <script src="home.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 <body>
     <nav class="navbar">
         <img class="logo" src="logo.png" alt="Logo">
         <h1 class="title">DiscoTrav</h1>
-        <p class="user-info">Hey, </p>
-        <i id="logout" tabindex="0" onkeydown="handleKeyPress(event, 'disconnect')" class="fa-solid fa-right-from-bracket fa-lg" style="color: #ff0000;"></i>
+        <p class="user-info" aria-label="Connecté en tant que utilisateur">Hey, <span id="username"></span></p>
+        <button id="logout" class="logoutBTN" aria-label="Déconnexion" onclick="disconnect()" tabindex="0">
+            <i class="fa-solid fa-right-from-bracket fa-lg" style="color: #ff0000;"></i>
+        </button>
     </nav>
     <div class="container">
-        <article id="utopia" tabindex="0" onclick="goToArticle('utopia')" onkeydown="handleKeyPress(event, 'utopia')">
+        <article id="utopia" tabindex="0" onclick="goToArticle('utopia')" onkeydown="handleKeyPress(event, 'utopia')" role="button" aria-label="Article: UTOPIA">
             <img src="utopia.jpg" alt="Cover de l'album utopia">
             <div class="details">
                 <h2>UTOPIA</h2>
@@ -25,7 +27,7 @@
                 <p>Durée: 01H 13MIN</p>
             </div>
         </article>
-        <article id="jackboys" tabindex="0" onclick="goToArticle('jackboys')" onkeydown="handleKeyPress(event, 'jackboys')">
+        <article id="jackboys" tabindex="0" onclick="goToArticle('jackboys')" onkeydown="handleKeyPress(event, 'jackboys')" role="button" aria-label="Article: JACKBOYS">
             <img src="jackboys.jpg" alt="Cover de l'album jackboys">
             <div class="details">
                 <h2>JACKBOYS</h2>
@@ -34,7 +36,7 @@
                 <p>Durée: 21MIN 22SEC</p>
             </div>
         </article>
-        <article id="astroworld" tabindex="0" onclick="goToArticle('astroworld')" onkeydown="handleKeyPress(event, 'astroworld')">
+        <article id="astroworld" tabindex="0" onclick="goToArticle('astroworld')" onkeydown="handleKeyPress(event, 'astroworld')" role="button" aria-label="Article: ASTROWORLD">
             <img src="astroworld.jpg" alt="Cover de l'album astroworld">
             <div class="details">
                 <h2>ASTROWORLD</h2>
@@ -43,7 +45,7 @@
                 <p>Durée: 58MIN 42SEC</p>
             </div>
         </article>
-        <article id="birds" tabindex="0" onclick="goToArticle('birds')" onkeydown="handleKeyPress(event, 'birds')">
+        <article id="birds" tabindex="0" onclick="goToArticle('birds')" onkeydown="handleKeyPress(event, 'birds')" role="button" aria-label="Article: BIRDS IN THE TRAP SING MCKNIGHT">
             <img src="birds.jpg" alt="Cover de l'album birds in the trap sing mcknight">
             <div class="details">
                 <h2>BIRDS IN THE TRAP SING MCKNIGHT</h2>
@@ -52,7 +54,7 @@
                 <p>Durée: 53MIN 45SEC</p>
             </div>
         </article>
-        <article id="rodeo" tabindex="0" onclick="goToArticle('rodeo')" onkeydown="handleKeyPress(event, 'rodeo')">
+        <article id="rodeo" tabindex="0" onclick="goToArticle('rodeo')" onkeydown="handleKeyPress(event, 'rodeo')" role="button" aria-label="Article: RODEO">
             <img src="rodeo.jpg" alt="Cover de l'album rodeo">
             <div class="details">
                 <h2>RODEO</h2>
@@ -65,10 +67,7 @@
 
     <script>
         function goToArticle(articleId) {
-            // Replace this with the actual logic to navigate to the article's page
             console.log("Navigating to article:", articleId);
-
-            // Example: redirect to the article's page
             window.location.href = `/article-${articleId}`;
         }
 
@@ -78,30 +77,17 @@
 
         function handleKeyPress(event, articleId) {
             if (event.key === "Enter") {
-                switch (articleId) {
-                    case "utopia":
-                        goToArticle("utopia");
-                        break;
-                    case "jackboys":
-                        goToArticle("jackboys");
-                        break;
-                    case "astroworld":
-                        goToArticle("astroworld");
-                        break;
-                    case "birds":
-                        goToArticle("birds");
-                        break;
-                    case "rodeo":
-                        goToArticle("rodeo");
-                        break;
-                    case "disconnect":
-                        disconnect();
-                        break;
-                    default:
-                        break;
-                }
+                goToArticle(articleId);
             }
         }
+
+        function displayUsername() {
+            const usernameElement = document.getElementById("username");
+            const username = getUserFromLocalStorage();
+            usernameElement.textContent = username;
+        }
+
+        displayUsername();
     </script>
 </body>
 </html>
