@@ -26,6 +26,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
         window.location.href = '/home';
     });
 
+    const username = getCookie('username');
+
+    let navUserContent = document.getElementsByClassName('user-info');
+    navUserContent[0].innerHTML = `Hey, ${username}`;
+
+    const logoutButton = document.getElementById('logout');
+
+    logoutButton.addEventListener('click', () => {
+        window.location.href = '/';
+    });
+
     const coverName = getCookie('cover');
 
     const cover = document.getElementsByClassName('coverimg');
@@ -80,6 +91,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 <li>WHO?WHAT?</li>
                 <li>BUTTERFLY EFFECT</li>
                 <li>HOUSTONFORNICATION</li>
+                <li></li>
                 <li>COFFEE BEAN</li>
             `
             break;
