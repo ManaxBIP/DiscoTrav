@@ -178,6 +178,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 pdp.classList.add('pdp');
                 profilepics = document.createElement('img');
                 profilepics.src = 'profile.jpg';
+                profilepics.alt = 'profile picture';
                 pdp.appendChild(profilepics);
                 const content = document.createElement('div');
                 content.classList.add('content');
