@@ -162,25 +162,28 @@ window.addEventListener('DOMContentLoaded', (event) => {
             break;
     }
 
-    async function getComments() {
+    async function getComments(coverName) {
         try {
-            const response = await fetch('/comments');
+            console.log(coverName);
+            const response = await fetch(`/comments?coverName=${coverName}`);
             const comments = await response.json();
-
+    
             // Bouclez sur chaque commentaire et affichez-le dans la div de commentaires
             const commentsDiv = document.querySelector('.Comments');
             comments.forEach(comment => {
                 const commentElement = document.createElement('div');
-                commentElement.textContent = `${comment.Username}: ${comment.Content} - ${comment.created_at}`;
+                const formatedDate = formatTimeDifference(comment.created_at);
+                commentElement.textContent = `${comment.Username}: ${comment.Content} - ${formatedDate}`;
                 commentsDiv.appendChild(commentElement);
             });
         } catch (error) {
             console.error('Erreur lors de la récupération des commentaires:', error);
         }
     }
+    
 
     // Appelez la fonction pour récupérer les commentaires au chargement de la page
-    getComments();
+    getComments(coverName);
 
     // Gérez l'ajout de nouveaux commentaires
     const submitButton = document.createElement('button');
@@ -191,10 +194,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
             case 'utopia':
                 articleId = 1;
                 break;
-            case 'astroworld':
+            case 'jackboys':
                 articleId = 2;
                 break;
-            case 'jackboys':
+            case 'astroworld':
                 articleId = 3;
                 break;
             case 'birds':
@@ -218,10 +221,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                     body: JSON.stringify({ IdArticle: articleId, Username: username, Content: content })
                 });
 
-                // Rafraîchissez les commentaires pour afficher le nouveau commentaire ajouté
-                const commentsDiv = document.querySelector('.Comments');
-                commentsDiv.innerHTML = '';
-                getComments();
+                location.reload();
             } catch (error) {
                 console.error('Erreur lors de l\'ajout du commentaire:', error);
             }
@@ -232,3 +232,21 @@ window.addEventListener('DOMContentLoaded', (event) => {
     document.querySelector('.Comments').appendChild(submitButton);
 
 });
+
+function formatTimeDifference(commentDate) {
+    const currentDate = new Date();
+    const diffInSeconds = Math.floor((currentDate - new Date(commentDate)) / 1000);
+
+    if (diffInSeconds < 60) {
+        return 'now';
+    } else if (diffInSeconds < 3600) {
+        const minutes = Math.floor(diffInSeconds / 60);
+        return minutes === 1 ? '1 min ago' : `${minutes} mins ago`;
+    } else if (diffInSeconds < 86400) {
+        const hours = Math.floor(diffInSeconds / 3600);
+        return hours === 1 ? '1 hour ago' : `${hours} hours ago`;
+    } else {
+        const days = Math.floor(diffInSeconds / 86400);
+        return days === 1 ? '1 day ago' : `${days} days ago`;
+    }
+}
