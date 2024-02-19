@@ -27,6 +27,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     });
 
     const coverName = getCookie('cover');
+    const coverFont = document.getElementsByClassName('cover-font');
 
     const cover = document.getElementsByClassName('coverimg');
     cover[0].src = `${coverName}.jpg`;
@@ -38,6 +39,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     switch (coverName) {
         case 'utopia':
             desc[0].innerHTML = `"Utopia" est bien plus qu'un simple album pour Travis Scott ; c'est un voyage à travers les rêves et les aspirations d'un artiste à la recherche de l'ultime expression de son art. Chaque piste est un paysage sonore distinct, fusionnant des rythmes captivants avec des paroles évocatrices pour transporter l'auditeur dans un univers fantastique. Avec des collaborations de premier plan et une production innovante, cet album repousse les frontières du genre et établit Travis Scott comme un pionnier de la musique contemporaine. "Utopia" invite chacun à explorer son propre monde intérieur et à trouver la beauté dans l'imagination sans limites. C'est une œuvre d'art audacieuse qui célèbre la créativité sous toutes ses formes.`;
+            coverFont[0].src = 'utopia-font.png';
             salutcestLOIC[0].innerHTML = `
                 <li>HYAENA</li>
                 <li>THANK GOD</li>
@@ -63,6 +65,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
         case 'astroworld':
             desc[0].innerHTML = `L'album "Astroworld" de Travis Scott est bien plus qu'une simple collection de chansons; c'est une odyssée artistique qui transporte l'auditeur dans un univers fantasmagorique. À travers des rythmes captivants et des paroles évocatrices, Scott peint un paysage sonore unique, mêlant le hip-hop, le trap et des éléments expérimentaux. Avec une conception visuelle époustouflante, l'album fusionne l'art, la musique et la narration pour créer une expérience immersive. Chaque piste est soigneusement orchestrée pour capturer l'esprit de l'imaginaire, invitant les auditeurs à plonger dans les méandres de l'univers d'Astroworld avec lui.`;
+            coverFont[0].src = 'astroworld-font.png';
             salutcestLOIC[0].innerHTML = `
                 <li>STARGAZING</li>
                 <li>CAROUSEL</li>
@@ -86,6 +89,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
         case 'jackboys':
             desc[0].innerHTML = `L'album "Jackboys" de Travis Scott ne se contente pas d'être une simple compilation de chansons ; il représente une immersion totale dans son univers sonore et visuel singulier. Sa conception résulte d'une collaboration intense, rassemblant divers talents pour créer une expérience immersive. Des rythmes hypnotiques aux visuels saisissants, chaque détail est soigneusement pensé pour transporter l'auditeur dans un voyage captivant. En fusionnant diverses influences, Travis Scott repousse les frontières du rap et de la culture urbaine, offrant ainsi un album qui laisse une marque indélébile et redéfinit les normes de l'industrie musicale.`
+            coverFont[0].src = 'jackboys-font.png';
             salutcestLOIC[0].innerHTML = `
                 <li>HIGHEST IN THE ROOM</li>
                 <li>JACKBOYS</li>
@@ -99,6 +103,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             
         case 'birds':
             desc[0].innerHTML = `L'album "Birds in the Trap Sing McKnight" de Travis Scott transcende les simples compilations de chansons pour offrir une immersion totale dans son univers musical distinctif. Fruit d'une collaboration intense, il réunit des talents divers pour créer une expérience auditive et visuelle captivante. Des mélodies envoûtantes aux paroles poignantes, chaque aspect est minutieusement conçu pour transporter l'auditeur dans un voyage émotionnel saisissant. En fusionnant des influences variées, Travis Scott repousse les limites du genre rap et crée un album qui redéfinit les normes de l'industrie musicale tout en laissant une empreinte durable dans l'esprit de ses auditeurs.`;
+            coverFont[0].src = 'birds-font.png';
             salutcestLOIC[0].innerHTML = `
                 <li>the ends</li>
                 <li>way back</li>
@@ -119,6 +124,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
         case 'rodeo':
             desc[0].innerHTML = `L'album "Rodeo" de Travis Scott va bien au-delà d'une simple compilation de chansons ; il offre une immersion totale dans son univers sonore distinctif. Conçu à travers une collaboration intense, il réunit des talents divers pour créer une expérience sensorielle captivante. Des beats puissants aux paroles évocatrices, chaque élément est soigneusement élaboré pour transporter l'auditeur dans un voyage émotionnel et visuel envoûtant. En fusionnant des influences diverses, Travis Scott repousse les frontières du rap et de la culture urbaine, offrant ainsi un album qui marque son époque et redéfinit les normes de l'industrie musicale.`;
+            coverFont[0].src = 'rodeo-font.png';
             salutcestLOIC[0].innerHTML = `
                 <li>Pornography</li>
                 <li>Oh My Dis Side</li>
