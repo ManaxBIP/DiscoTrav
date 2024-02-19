@@ -101,10 +101,38 @@ app.post('/home', async (req, res) => {
 // Route pour récupérer les commentaires depuis Supabase
 app.get('/comments', async (req, res) => {
     try {
+        const { coverName } = req.query;
+
+        let articleId;
+        switch (coverName) {
+            case 'utopia':
+                articleId = 1;
+                break;
+            case 'jackboys':
+                articleId = 2;
+                break;
+            case 'astroworld':
+                articleId = 3;
+                break;
+            case 'birds':
+                articleId = 4;
+                break;
+            case 'rodeo':
+                articleId = 5;
+                break;
+            default:
+                articleId = null;
+        }
+
+        if (articleId === null) {
+            throw new Error('Article non trouvé');
+        }
+
         const { data, error } = await supabase
             .from('comments')
-            .select('*');
-        
+            .select('*')
+            .eq('IdArticle', articleId);
+
         if (error) {
             throw error;
         }
@@ -123,7 +151,7 @@ app.post('/comments', async (req, res) => {
 
         const { data, error } = await supabase
             .from('comments')
-            .insert([{ IdArticle, Username, Content, created_at: new Date().toISOString() }]);
+            .insert([{ IdArticle, Username, Content}]);
 
         if (error) {
             throw error;
