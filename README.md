@@ -11,7 +11,7 @@ This project is a simple web application built using HTML, CSS, and Express.js t
 
 ## About
 
-This project aims to provide an easy-to-use interface to explore the discography of Travis Scott, a renowned American rapper, singer, and songwriter. It provides information about his albums, mixtapes, and singles.
+This project make in 2hours full accessible aims to provide an easy-to-use interface to explore the discography of Travis Scott, a renowned American rapper, singer, and songwriter. It provides information about his albums, mixtapes, and singles.
 
 ## Installation
 
