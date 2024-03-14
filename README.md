@@ -1,4 +1,6 @@
-# Travis Scott Discography
+![Sans titre](https://github.com/ManaxBIP/DiscoTrav/assets/112895325/2296845d-aa36-453a-a61c-be5f19599891)[Uploading Sans titre.gif…]()
+
+# Travis Scott Discography!
 
 This project is a simple web application built using HTML, CSS, and Express.js that lists the discography of the artist Travis Scott.
 
@@ -47,4 +49,4 @@ This project make in 2hours full accessible aims to provide an easy-to-use inter
 
 ## Credits
 
-This project was created by [Your Name]. Feel free to contribute by submitting pull requests or reporting issues on [GitHub](https://github.com/yourusername/travis-scott-discography).
+This project was created by REGUIA Dalyll [ManaxBIP](https://github.com/ManaxBIP) & [NotGrafik](https://github.com/NotGrafik). Feel free to contribute by submitting pull requests or reporting issues on [DiscoTrav](https://github.com/ManaxBIP/DiscoTrav).
