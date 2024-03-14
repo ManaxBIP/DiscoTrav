@@ -49,4 +49,4 @@ This project make in 2hours full accessible aims to provide an easy-to-use inter
 
 ## Credits
 
-This project was created by REGUIA Dalyll [ManaxBIP](https://github.com/ManaxBIP) & [NotGrafik](https://github.com/NotGrafik). Feel free to contribute by submitting pull requests or reporting issues on [DiscoTrav](https://github.com/ManaxBIP/DiscoTrav).
+This project was created by REGUIA Dalyll [ManaxBIP](https://github.com/ManaxBIP) & JEAN LOUIS Pablo [NotGrafik](https://github.com/NotGrafik). Feel free to contribute by submitting pull requests or reporting issues on [DiscoTrav](https://github.com/ManaxBIP/DiscoTrav).
